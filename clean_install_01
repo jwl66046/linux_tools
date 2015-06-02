@@ -1,0 +1,14 @@
+#!/bin/sh
+
+## Initial Software Repository Update
+/usr/bin/apt-get -y update 
+
+## Remove Ubuntu Adware Dash Bullshit
+/usr/bin/wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
+
+## Remove unncessary bullshit
+/usr/bin/apt-get -y remove libreoffice* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*
+
+## Install normal programs
+/usr/bin/apt-get -y update
+/usr/bin/apt-get -y install whois bleachbit filezilla p7zip-full minicom dnsutils keepassx curl build-essential vlc tcpdump default-jre gksu iperf openssh-server openssh-client traceroute hping3 idle idle3 mercurial chromium-browser
