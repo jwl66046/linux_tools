@@ -12,3 +12,7 @@
 ## Install normal programs
 /usr/bin/apt-get -y update
 /usr/bin/apt-get -y install whois bleachbit filezilla p7zip-full minicom dnsutils keepassx curl build-essential vlc tcpdump default-jre gksu iperf openssh-server openssh-client traceroute hping3 idle idle3 mercurial chromium-browser
+
+## Upgrade-all
+/usr/bin/apt-get -y dist-upgrade
+
