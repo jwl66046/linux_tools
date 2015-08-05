@@ -1,3 +1,4 @@
 #!/bin/sh
 /usr/bin/apt-get -y update
 /usr/bin/apt-get -y upgrade
+/usr/bin/apt-get -y autoremove
