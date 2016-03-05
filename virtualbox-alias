@@ -1,0 +1,8 @@
+'''
+Aliases for .bashrc to help condense annoying-assed virtualbox commands
+'''
+
+
+alias vm='vboxmanage'
+alias vmlist='VBoxManage list vms -l | grep -e ^Name: -e ^State  | sed "s/Name:[ ]*\(.*\)/\1 \//;s/State:[\ ]*//" | paste -d " " - -'
+
