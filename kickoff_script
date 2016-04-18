@@ -82,7 +82,7 @@ sudo shutdown -r now
 ################################
 
 sudo apt-get -y update 
-sudo apt-get -y install preload whois filezilla p7zip-full minicom dnsutils keepassx curl vlc remmina git tcpdump default-jre gksu iperf iperf3 openssh-server openssh-client traceroute hping3 idle idle3 mercurial fonts-droid fonts-noto ubuntu-restricted-extras mtr wireshark tcpdump 
+sudo apt-get -y install preload whois filezilla p7zip-full minicom dnsutils keepassx curl vlc remmina git tcpdump default-jre gksu iperf3 openssh-server openssh-client traceroute hping3 mercurial fonts-droid fonts-noto ubuntu-restricted-extras mtr wireshark tcpdump 
 
 ## Chromium
 sudo apt-get -y install chromium-browser
@@ -95,6 +95,15 @@ sudo dpkg -i google-chrome*.deb
 
 ## Network Tools
 sudo apt-get -y install ntop iftop jnettop nethogs cdpr mtr ngrep netcat nmap snmp ethtool libncursesw5-dev libssl-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev ettercap-graphical nuttcp wireshark python-scapy namebench
+
+## Python & Tools
+sudo apt-get -y install python3 idle3 
+
+cd ~
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+
+
 
 
 ## Install PyCharm IDE
