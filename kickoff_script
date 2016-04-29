@@ -14,7 +14,6 @@ Changes:  Migrated file from Google Drive to Github
 # This makes life easier in general, but use with caution!
 # launch with 'sudo visudo'
 
-johnlawr  ALL=(ALL) NOPASSWD: ALL
 kfm       ALL=(ALL) NOPASSWD: ALL
 
 
