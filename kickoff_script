@@ -14,7 +14,7 @@ Changes:  Migrated file from Google Drive to Github
 # This makes life easier in general, but use with caution!
 # launch with 'sudo visudo'
 
-kfm       ALL=(ALL) NOPASSWD: ALL
+kfm ALL=(ALL) NOPASSWD: ALL
 
 
 
@@ -60,7 +60,7 @@ rm -rdf scripts
 rm d_update
 rm update
 
-git clone https://github.com/kungfumastah/scripts.git
+git clone https://github.com/kungfumastah/linux_tools.git
 
 chmod 774 ~/scripts/d_update
 chmod 774 ~/scripts/update
