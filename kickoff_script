@@ -60,13 +60,18 @@ rm -rdf scripts
 rm d_update
 rm update
 
+cd ~
+rm -rdf linux_tools
+rm d_update
+rm update
+
 git clone https://github.com/kungfumastah/linux_tools.git
 
-chmod 774 ~/scripts/d_update
-chmod 774 ~/scripts/update
+chmod 774 ~/linux_tools/d_update
+chmod 774 ~/linux_tools/update
 
-ln -s ~/scripts/d_update ~/d_update
-ln -s ~/scripts/update ~/update
+ln -s ~/linux_tools/d_update ~/d_update
+ln -s ~/linux_tools/update ~/update
 
 # Run the distribution update script
 
