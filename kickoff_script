@@ -6,9 +6,9 @@ Changes:  Migrated file from Google Drive to Github
 
 '''
 
-##########################################
-### Step 1:  Elevated User Permissions ###
-##########################################
+###########################################
+### Section:  Elevated User Permissions ###
+###########################################
 
 # This section creates elevated users that do not require password for sudo commands.
 # This makes life easier in general, but use with caution!
@@ -18,9 +18,11 @@ kfm ALL=(ALL) NOPASSWD: ALL
 
 
 
-######################################################################
-### Step 2: Install essential applications, & remove non-essential ###
-######################################################################
+
+
+#######################################################################
+### Section: Install essential applications, & remove non-essential ###
+#######################################################################
 
 sudo apt-get -y update
 sudo apt-get -y install git dkms gcc build-essential
@@ -34,9 +36,12 @@ wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 sudo apt-get -y remove firefox* 
 
 
-##############################
-### Step 3: VM Guest Tools ###
-##############################
+
+
+
+###############################
+### Section: VM Guest Tools ###
+###############################
 
 ## This section installs VM Guest Tools. Ignore if this is a bare-metal install
 # *Virtualbox only*
@@ -51,9 +56,11 @@ sudo shutdown -r now
 
 
 
-###################################
-### Step 4: Auto-update scripts ###
-###################################
+
+
+####################################
+### Section: Auto-update scripts ###
+####################################
 
 cd ~
 rm -rdf scripts
@@ -82,42 +89,72 @@ sudo sh ~/d_update
 sudo shutdown -r now
 
 
-################################
-### Step 5: Install software ###
-################################
+################
+## Appearance ##
+################
+
+## Numix icons
+
+sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-gtk-theme numix-icon-theme-circle
+
+## Fonts
+
+sudo apt -y install fonts-noto 
+
+
+
+
+
+
+
+#################################
+### Section: Install software ###
+#################################
 
 sudo apt-get -y update 
 sudo apt-get -y install preload whois filezilla p7zip-full minicom dnsutils keepassx curl vlc remmina git tcpdump default-jre gksu iperf3 openssh-server openssh-client traceroute hping3 mercurial fonts-droid fonts-noto fonts-inconsolata ubuntu-restricted-extras mtr wireshark tcpdump 
 
-## Chromium
-sudo apt-get -y install chromium-browser
-
 ## Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
 sudo dpkg -i google-chrome*.deb
+## optional:  sudo apt -y remove firefox*
 
 
 
-## Network Tools
-sudo apt-get -y install ntop iftop jnettop nethogs cdpr mtr ngrep netcat nmap snmp ethtool libncursesw5-dev libssl-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev ettercap-graphical nuttcp wireshark python-scapy namebench
+
+#####################
+## Section: Python ##
+#####################
 
 ## Python & Tools
 sudo apt-get -y install python3 idle3 
 
+## PIP
 cd ~
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
-
-
-
 
 ## Install PyCharm IDE
 sudo add-apt-repository ppa:mystic-mirage/pycharm
 sudo apt-get -y update && sudo apt-get -y install pycharm-community
 
-## Install InSync Google Drive for Linux
+
+
+#####################
+## Section: InSync ##
+#####################
 
 echo "deb http://apt.insynchq.com/ubuntu $(lsb_release -cs) non-free" | sudo tee /etc/apt/sources.list.d/insync.list
 wget -O - https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key | sudo apt-key add -
 sudo apt-get - y update && sudo apt-get -y install insync
+
+
+
+############################
+## Section: Network Tools ##
+############################
+
+sudo apt-get -y install ntop iftop jnettop nethogs cdpr mtr ngrep netcat nmap snmp ethtool libncursesw5-dev libssl-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev ettercap-graphical nuttcp wireshark python-scapy namebench
 
