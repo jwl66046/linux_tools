@@ -93,6 +93,11 @@ sudo shutdown -r now
 ## Appearance ##
 ################
 
+## GNOME Tweak TOol
+
+gnome-tweak-tool
+
+
 ## Numix icons
 
 sudo add-apt-repository ppa:numix/ppa
