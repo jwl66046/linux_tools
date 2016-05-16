@@ -1,10 +1,8 @@
 ''' 
 This is a kickoff script for apt-based Linux systems.
-
-Last edited:  2016.01.23
-Changes:  Migrated file from Google Drive to Github
-
 '''
+
+
 
 ###########################################
 ### Section:  Elevated User Permissions ###
@@ -24,15 +22,22 @@ kfm ALL=(ALL) NOPASSWD: ALL
 ### Section: Install essential applications, & remove non-essential ###
 #######################################################################
 
-sudo apt-get -y update
-sudo apt-get -y install git dkms gcc build-essential
-sudo apt-get -y remove libreoffice* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*  && sudo apt-get -y autoremove
+## First update
 
-# Remove Ubuntu Adware Dash Bullshit
+sudo apt-get -y update
+sudo apt-get -y remove libreoffice* hexchat* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*  && sudo apt-get -y autoremove
+
+sudo apt-get -y install git dkms gcc build-essential
+
+
+
+## Remove Ubuntu Adware Dash Bullshit
 *Ubuntu Only - Unity Versions*
 wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 
-# Optional
+
+
+## Optional
 sudo apt-get -y remove firefox* 
 
 
