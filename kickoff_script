@@ -100,7 +100,7 @@ sudo shutdown -r now
 
 ## GNOME Tweak TOol
 
-gnome-tweak-tool
+sudo apt -y install gnome-tweak-tool
 
 
 ## Numix icons
