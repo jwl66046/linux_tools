@@ -1,0 +1,17 @@
+libreoffice*
+hexchat*
+ubuntuone*
+brasero*
+gnome-contacts
+rhythmbox*
+empathy*
+gnome-orca
+shotwell*
+gnome-mines
+gnome-sudoku
+gnome-mahjongg
+onboard*
+thunderbird*
+pidgin*
+xchat*
+banshee*
