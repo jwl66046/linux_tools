@@ -16,3 +16,4 @@ mtr
 virtualbox-guest-additions-iso
 virtualbox-guest-dkms
 fonts-inconsolata
+fonts-liberation
