@@ -123,6 +123,43 @@ cd absolute-themes/
 mv * ~/.themes
 
 
+## Make terminal pretty -- this part is not yet done!
+
+    ## HERE ARE THE VALUES THAT NEED TO BE CHANGED
+    ﻿johnlawr@vm-ub16:~$ dconf dump  /org/mate/terminal/profiles/default/
+    [/]
+    foreground-color='#A564E93EFFFF'
+    visible-name='Default'
+    palette='#000000000000:#AAAA00000000:#0000AAAA0000:#AAAA55550000:#00000000AAAA:#AAAA0000AAAA:#0000AAAAAAAA:#AAAAAAAAAAAA:#555555555555:#FFFF55555555:#5555FFFF5555:#FFFFFFFF5555:#55555555FFFF:#FFFF5555FFFF:#5555FFFFFFFF:#FFFFFFFFFFFF'
+    default-size-columns=110
+    default-size-rows=36
+    cursor-shape='underline'
+    background-darkness=0.93679458239277658
+    use-custom-default-size=true
+    use-system-font=false
+    background-type='transparent'
+    use-theme-colors=false
+    font='Liberation Mono 10'
+    allow-bold=false
+    scrollback-unlimited=true
+    bold-color='#000000000000'
+    background-color='#00C24532782D'
+
+
+dconf
+
+## Make desktop pretty
+
+gsettings set ﻿org.mate.caja.desktop font 'Liberation Sans Narrow Condensed 10'
+gsettings set org.mate.caja.desktop font 'Liberation Sans Narrow Condensed 10'
+gsettings set org.mate.Marco.general titlebar-font 'Liberation Sans Bold 11'
+gsettings set org.mate.Marco.general titlebar-font 'Liberation Sans Bold 11'
+gsettings set org.mate.interface monospace-font-name 'Liberation Mono 11'
+gsettings set org.mate.interface font-name 'Liberation Sans Narrow Condensed 11'
+gsettings set org.mate.interface document-font-name 'Liberation Sans 11'
+
+    # set wallpaper
+    # remove sfx scheme
 
 
 
