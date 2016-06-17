@@ -24,19 +24,14 @@ sudo apt -y install git dkms gcc build-essential
 sudo apt -y remove libreoffice* hexchat* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*  && sudo apt-get -y autoremove
 sudo apt -y full-upgrade
 
-
-# Restart here
+##### Restart here
 
 ## Remove Ubuntu Adware Dash Bullshit
 *Ubuntu Only - Unity Versions*
 wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 
-
-
 ## Optional
 sudo apt -y remove firefox* 
-
-
 
 
 
