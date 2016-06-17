@@ -1,0 +1,26 @@
+## ~/.bashrc
+## JWL's config file for Bash RC
+
+##########################
+## Section: bash prompt ##
+##########################
+
+PS1='\n\u \t \n\h::\w >>> '
+
+
+#######################
+## Section:  Aliases ##
+#######################
+
+## ls 
+
+alias ls='ls -lh --color=auto --group-directories-first'
+alias ll='ls -lah --color=auto --group-directories-first'
+
+
+## virtualbox
+
+alias vm='vboxmanage'
+alias vmlist='VBoxManage list vms -l | grep -e ^Name: -e ^State  | sed "s/Name:[ ]*\(.*\)/\1 \//;s/State:[\ ]*//" | paste -d " " - -'
+
+
