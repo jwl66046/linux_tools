@@ -91,7 +91,8 @@ sudo apt -y install numix-gtk-theme numix-icon-theme-circle
 
 ## Fonts
 
-sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu
+sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu fonts-liberation
+
 
 
 
