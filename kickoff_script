@@ -79,7 +79,7 @@ sudo ln -s ~/linux_tools/update /usr/local/bin/update
 
 ## GNOME Tweak TOol
 
-sudo apt -y install gnome-tweak-tool
+sudo apt -y install gnome-tweak-tool gconf-editor
 
 
 ## Numix icons
