@@ -2,8 +2,6 @@
 This is a kickoff script for apt-based Linux systems.
 '''
 
-
-
 ###########################################
 ### Section:  Elevated User Permissions ###
 ###########################################
@@ -15,21 +13,19 @@ This is a kickoff script for apt-based Linux systems.
 kfm ALL=(ALL) NOPASSWD: ALL
 
 
-
-
-
 #######################################################################
 ### Section: Install essential applications, & remove non-essential ###
 #######################################################################
 
 ## First update
 
-sudo apt-get -y update
-sudo apt-get -y remove libreoffice* hexchat* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*  && sudo apt-get -y autoremove
+sudo apt -y update
+sudo apt -y install git dkms gcc build-essential
+sudo apt -y remove libreoffice* hexchat* ubuntuone* brasero* gnome-contacts rhythmbox* empathy* gnome-orca shotwell* gnome-mines gnome-sudoku gnome-mahjongg onboard* thunderbird* pidgin* xchat* banshee*  && sudo apt-get -y autoremove
+sudo apt -y full-upgrade
 
-sudo apt-get -y install git dkms gcc build-essential
 
-
+# Restart here
 
 ## Remove Ubuntu Adware Dash Bullshit
 *Ubuntu Only - Unity Versions*
@@ -38,7 +34,7 @@ wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 
 
 ## Optional
-sudo apt-get -y remove firefox* 
+sudo apt -y remove firefox* 
 
 
 
@@ -51,10 +47,10 @@ sudo apt-get -y remove firefox*
 ## This section installs VM Guest Tools. Ignore if this is a bare-metal install
 # *Virtualbox only*
 
-sudo apt-get -y install virtualbox-guest-additions-iso virtualbox-guest-dkms
+sudo apt -y install virtualbox-guest-additions-iso virtualbox-guest-dkms
 
 # *VMware Only*
-sudo apt-get -y update && sudo apt-get -y install build-essential open-vm-*
+sudo apt -y update && sudo apt-get -y install build-essential open-vm-*
 
 # Restart after this step to use VM Guest Tools!
 sudo shutdown -r now
@@ -68,31 +64,19 @@ sudo shutdown -r now
 ####################################
 
 cd ~
-rm -rdf scripts
-rm d_update
-rm update
-
-cd ~
 rm -rdf linux_tools
 rm d_update
+rm /usr/bin/local/d_update
 rm update
+rm /usr/bin/local/update
 
 git clone https://github.com/kungfumastah/linux_tools.git
 
 chmod 774 ~/linux_tools/d_update
 chmod 774 ~/linux_tools/update
 
-ln -s ~/linux_tools/d_update ~/d_update
-ln -s ~/linux_tools/update ~/update
-
-# Run the distribution update script
-
-sudo sh ~/d_update
-
-# Restart for any kernel updates
-
-sudo shutdown -r now
-
+sudo ln -s ~/linux_tools/d_update /usr/local/bin/d_update
+sudo ln -s ~/linux_tools/update /usr/local/bin/update
 
 ################
 ## Appearance ##
@@ -105,13 +89,15 @@ sudo apt -y install gnome-tweak-tool
 
 ## Numix icons
 
-sudo add-apt-repository ppa:numix/ppa
-sudo apt-get update
-sudo apt-get install numix-gtk-theme numix-icon-theme-circle
+sudo add-apt-repository -y ppa:numix/ppa
+sudo apt update
+sudo apt -y install numix-gtk-theme numix-icon-theme-circle
+
 
 ## Fonts
 
 sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu
+
 
 
 ## Absolute Theme
@@ -125,16 +111,12 @@ mv * ~/.themes
 
 
 
-
-
-
-
 #################################
 ### Section: Install software ###
 #################################
 
-sudo apt-get -y update 
-sudo apt-get -y install preload whois filezilla p7zip-full minicom dnsutils keepassx curl vlc remmina git tcpdump default-jre gksu iperf3 openssh-server openssh-client traceroute hping3 mercurial fonts-droid fonts-noto fonts-inconsolata ubuntu-restricted-extras mtr wireshark tcpdump 
+sudo apt -y update 
+sudo apt -y install preload whois filezilla p7zip-full minicom dnsutils keepassx curl vlc remmina git tcpdump default-jre gksu iperf3 openssh-server openssh-client traceroute hping3 mercurial fonts-droid fonts-noto fonts-inconsolata ubuntu-restricted-extras mtr wireshark tcpdump 
 
 ## Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
@@ -149,7 +131,7 @@ sudo dpkg -i google-chrome*.deb
 #####################
 
 ## Python & Tools
-sudo apt-get -y install python3 idle3 
+sudo apt -y install python3 idle3 
 
 ## PIP
 cd ~
@@ -157,8 +139,8 @@ wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 
 ## Install PyCharm IDE
-sudo add-apt-repository ppa:mystic-mirage/pycharm
-sudo apt-get -y update && sudo apt-get -y install pycharm-community
+sudo add-apt-repository -y ppa:mystic-mirage/pycharm
+sudo apt -y update && sudo apt -y install pycharm-community
 
 
 
@@ -168,7 +150,7 @@ sudo apt-get -y update && sudo apt-get -y install pycharm-community
 
 echo "deb http://apt.insynchq.com/ubuntu $(lsb_release -cs) non-free" | sudo tee /etc/apt/sources.list.d/insync.list
 wget -O - https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key | sudo apt-key add -
-sudo apt-get - y update && sudo apt-get -y install insync
+sudo apt -y update && sudo apt -y install insync
 
 
 
@@ -176,5 +158,5 @@ sudo apt-get - y update && sudo apt-get -y install insync
 ## Section: Network Tools ##
 ############################
 
-sudo apt-get -y install ntop iftop jnettop nethogs cdpr mtr ngrep netcat nmap snmp ethtool libncursesw5-dev libssl-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev ettercap-graphical nuttcp wireshark python-scapy namebench
+sudo apt -y install ntop iftop jnettop nethogs cdpr mtr ngrep netcat nmap snmp ethtool libncursesw5-dev libssl-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev ettercap-graphical nuttcp wireshark python-scapy namebench
 
