@@ -60,6 +60,7 @@ sudo shutdown -r now
 
 cd ~
 rm -rdf linux_tools
+rm -rdf scripts
 rm d_update
 rm /usr/bin/local/d_update
 rm update
