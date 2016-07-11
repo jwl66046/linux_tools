@@ -4,7 +4,7 @@
 BASHRC=~/.bashrc
 RCKEY=JWL
 BACKUPDIR=~/zz_backups/
-NEWRC=~/linux_tools/dot_bashrc
+NEWRC=~/linux_tools/kickoff/assets/dot_bashrc
 
 
 # check to see if this .bashrc has already been updated
