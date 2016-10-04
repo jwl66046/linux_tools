@@ -100,6 +100,7 @@ sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu fonts-liberation
 ## Absolute Theme
 
 cd ~
+touch .themes
 wget http://gnome-look.org/CONTENT/content-files/126326-absolute-themes.tar.bz2
 tar xvf 126326-absolute-themes.tar.bz2
 cd absolute-themes/
