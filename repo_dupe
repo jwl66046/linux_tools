@@ -1,0 +1,9 @@
+## Steps to duplicate a repository in Github
+
+git clone --bare https://github.com/kungfumastah/apicem-ga-1.2-ll-sample-code-policy-labs.git
+
+cd apicem-ga-1.2-ll-sample-code-policy-labs.git
+git push --mirror https://github.com/kungfumastah/apicem_alwayson.git
+cd ..
+rm -rf apicem-ga-1.2-ll-sample-code-policy-labs.git
+
