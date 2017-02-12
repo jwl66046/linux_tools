@@ -1,0 +1,33 @@
+### Tasks for a new VM Guest for Virtualbox
+
+
+General
+========
+
+Advanced Tab
+ - Shared Clipboard -> Bidirectional
+
+
+System
+=========
+
+Processors -> 2
+Enable PAE/NX
+
+
+
+Display
+===========
+
+Enable 3d
+Video RAM -> 128
+
+
+Network
+==========
+
+Adapter 1 
+ - Attached to -> Bridge mode
+ - Randomize MAC
+ - Promiscuous -> Allow All
+ 
