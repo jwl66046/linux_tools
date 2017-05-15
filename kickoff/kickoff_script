@@ -95,6 +95,10 @@ sudo apt -y install numix-gtk-theme numix-icon-theme-circle
 sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu fonts-liberation
 
 
+## Disable Error Reporting
+
+sudo -k sed -i -r 's"enabled=1"enabled=0"' /etc/default/apport
+
 
 
 ## Absolute Theme
