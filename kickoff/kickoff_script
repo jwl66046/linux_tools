@@ -100,6 +100,9 @@ sudo apt -y install fonts-noto fonts-inconsolata fonts-ubuntu fonts-liberation
 sudo -k sed -i -r 's"enabled=1"enabled=0"' /etc/default/apport
 
 
+## Remove auto-update on bootup
+
+sudo apt -y remove unattended-upgrades
 
 ## Absolute Theme
 
